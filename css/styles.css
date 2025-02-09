@@ -42,7 +42,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 26, 188, 156;
+  --bs-primary-rgb: 0, 102, 156;
   --bs-secondary-rgb: 44, 62, 80;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
@@ -10979,7 +10979,11 @@ html {
   font-size: 1.25rem;
 }
 .masthead .masthead-avatar {
-  width: 15rem;
+  width: 400px; /* Adjust the size of the image */
+  height: 400px; /* Adjust the size of the image */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensures the image covers the circular area without distortion */
+  border: 5px solid white; /* Optional: Adds a white border around the image */
 }
 
 @media (min-width: 992px) {
@@ -10995,6 +10999,7 @@ html {
     font-size: 1.5rem;
   }
 }
+
 .portfolio .portfolio-item {
   cursor: pointer;
   position: relative;
@@ -11032,6 +11037,35 @@ html {
     font-size: 3rem;
     line-height: 2.5rem;
   }
+}
+
+.left-centered-bullets {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0; /* Remove left padding */
+  text-align: center; /* Center the text */
+  display: flex; /* Use flexbox to arrange items */
+  flex-direction: column; /* Stack the items vertically */
+  align-items: center; /* Center the list items horizontally */
+}
+
+.left-centered-bullets li {
+  display: flex; /* Use flexbox to align icon and text */
+  justify-content: flex-start; /* Align the text to the right of the icon */
+  align-items: center; /* Vertically center the icon and text */
+  margin-bottom: 15px; /* Add space between each bullet item */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  width: 100%; /* Ensures full width for the text alignment */
+}
+
+.left-centered-bullets li i {
+  margin-right: 100px; /* Space between the icon and the text */
+  padding-left: 100px; /* Add space between the icon and text */
+  font-size: 18px; /* Icon size */
+}
+
+/* Specific rule for wrapping only the target list item */
+.left-centered-bullets li.wrap-text {
+  white-space: normal; /* Allow the text to wrap */
 }
 
 .footer {
